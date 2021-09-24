@@ -1,1 +1,59 @@
-.test {}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    max-width: 1024px;
+    height: 100%;
+
+    .navbar {
+        backdrop-filter: blur(10px) opacity(0);
+        transition: backdrop-filter 0.2s;
+    }
+
+    .backdrop {
+        backdrop-filter: blur(10px) opacity(1);
+    }
+
+    button.navbar-toggler {
+        #svgMenuTop {
+            transform-origin: 50% 50%;
+            transform: rotate(0);
+            transition: transform 200ms;
+        }
+
+        #svgMenuMiddle {
+            transform-origin: 50% 50%;
+            transform: rotate(0);
+            transition: transform 200ms;
+        }
+
+        #svgMenuBottom {
+            transform-origin: 50% 50%;
+            transform: rotate(0);
+            transition: transform 200ms;
+        }
+
+        &[aria-expanded="true"] {
+            #svgMenuTop {
+                transform-origin: 50% 50%;
+                transform: rotate(45deg);
+            }
+
+            #svgMenuMiddle {
+                transform-origin: 50% 50%;
+                transform: rotate(-45deg);
+            }
+
+            #svgMenuBottom {
+                transform-origin: 50% 50%;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
