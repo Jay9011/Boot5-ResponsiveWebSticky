@@ -1,58 +1,410 @@
+@import "color";
+@import "font";
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// html, body 기본 정의 시작
+html {
+    height: 100%;
+}
+
 html,
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    // box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+@supports (height: -webkit-fill-available) {
+    html {
+        height: -webkit-fill-available;
+    }
+
+    html,
+    body {
+        min-height: -webkit-fill-available;
+    }
+
+}
+
+@supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    html {
+        height: -webkit-fill-available;
+    }
+
+    html,
+    body {
+        min-height: -webkit-fill-available;
+    }
 }
 
 #main {
-    max-width: 1024px;
-    height: 100%;
+    flex: 1 1 100%;
+}
+
+// html, body 기본 정의 종료
+
+// #backgroundBox {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     height: 100vh;
+//     z-index: -1;
+//     background-image: url(http://poscotower-yeoksam.co.kr/img/gallery_img01.jpg);
+//     background-size: 2500px 2500px;
+//     background-position: center;
+//     filter: blur(2px) brightness(40%);
+//     transition: background-position 2s ease-out;
+
+//     &[data-page='index'] {
+//         background-position: center 45%;
+//     }
+// }
+
+#main {
 
     .navbar {
-        backdrop-filter: blur(10px) opacity(0);
-        transition: backdrop-filter 0.2s;
-    }
+        background-color: rgba(255, 255, 255, 1);
+        // -webkit-backdrop-filter: blur(10px) opacity(0);
+        // backdrop-filter: blur(10px) opacity(0);
+        // transition: backdrop-filter 0.1s;
 
-    .backdrop {
-        backdrop-filter: blur(10px) opacity(1);
-    }
-
-    button.navbar-toggler {
-        #svgMenuTop {
-            transform-origin: 50% 50%;
-            transform: rotate(0);
-            transition: transform 200ms;
+        &.backdrop {
+            // background-color: rgba(255, 255, 255, 0.95);
+            // -webkit-backdrop-filter: blur(10px) opacity(1);
+            // backdrop-filter: blur(10px) opacity(1);
         }
 
-        #svgMenuMiddle {
-            transform-origin: 50% 50%;
-            transform: rotate(0);
-            transition: transform 200ms;
-        }
+        >.container-fluid {
 
-        #svgMenuBottom {
-            transform-origin: 50% 50%;
-            transform: rotate(0);
-            transition: transform 200ms;
-        }
+            // background-color: rgb(255, 255, 255);
+            .navbar-brand {
+                // line-height: 30px;
+                font-size: 1em;
+                font-weight: bold;
+                color: $posco-navy-900;
 
-        &[aria-expanded="true"] {
-            #svgMenuTop {
-                transform-origin: 50% 50%;
-                transform: rotate(45deg);
+                // &>img {
+                //     height: 40px;
+                //     vertical-align: bottom;
+                // }
             }
 
-            #svgMenuMiddle {
-                transform-origin: 50% 50%;
-                transform: rotate(-45deg);
+            >button.navbar-toggler {
+                .navbar-toggler-icon {
+                    .navbar-toggler-icon-bar {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        display: inline-block;
+                        width: 100%;
+                        height: 0.16em;
+
+                        &::before,
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                            transition: all .2s ease-out;
+                        }
+
+                        &::before {
+                            top: -0.4em;
+                        }
+
+                        &::after {
+                            top: 0.4em;
+                        }
+                    }
+                }
+
+                &[aria-expanded='true'] {
+                    .navbar-toggler-icon {
+                        .navbar-toggler-icon-bar {
+                            background-color: transparent;
+
+                            &::before {
+                                top: 0;
+                                transform: rotate(-45deg);
+                            }
+
+                            &::after {
+                                top: 0;
+                                transform: rotate(45deg);
+                            }
+
+                        }
+                    }
+                }
             }
 
-            #svgMenuBottom {
-                transform-origin: 50% 50%;
-                transform: rotate(-45deg);
+            #navbarContent {
+                ul.navbar-nav {
+                    li {
+                        &.nav-item {
+                            &>a {
+                                border: {
+                                    width: 1px;
+                                    style: solid;
+                                    radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.sidebar {
+            max-width: 19em;
+
+            ul.navbar-nav {
+                li {
+                    &.nav-item {
+                        padding: {
+                            top: 0.2rem;
+                            bottom: 0.2rem;
+                        }
+
+                        &>a {
+                            overflow: hidden;
+
+                            border: {
+                                width: 1px 0 1px 0;
+                                style: solid;
+                            }
+
+                            padding: {
+                                top: 1rem;
+                                bottom: 1rem;
+                                left: 1.5rem;
+                            }
+
+                            transition: all 0.15s ease-in-out;
+
+                            &.active {
+                                border-radius: 2em 0 0 2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // White links against a light and dark background
+    .navbar-light {
+        &:not(.sidebar) {
+            ul.navbar-nav {
+                .nav-item {
+                    &>a {
+                        border-color: $none-white;
+
+                        &:hover,
+                        &:focus {
+                            border-color: rgba($color: $posco-navy-300, $alpha: 0.5);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.sidebar {
+            ul.navbar-nav {
+                .nav-item {
+                    &>a {
+                        border-color: $none-white;
+                    }
+                }
+            }
+        }
+
+        .navbar-toggler-icon {
+            .navbar-toggler-icon-bar {
+                background-color: $navbar-light-hover-color;
+
+                &::before,
+                &::after {
+                    background-color: $navbar-light-hover-color;
+                }
+            }
+        }
+    }
+
+    .navbar-dark {
+        &:not(.sidebar) {
+            ul.navbar-nav {
+                .nav-item {
+                    &>a {
+                        border-color: $none-black;
+                    }
+                }
+            }
+        }
+
+        &.sidebar {
+            ul.navbar-nav {
+                .nav-item {
+                    &>a {
+                        border-color: $none-white;
+
+                        &:hover,
+                        &:focus {
+                            border: {
+                                left-width: 0.5rem;
+                            }
+
+                            color: $navbar-dark-brand-hover-color;
+                            // padding: {
+                            //     left: 2rem;
+                            // }
+                            // color: $posco-navy-900;
+                            // background-color: $navbar-dark-hover-color;
+                        }
+
+                        &.active {
+                            padding: {
+                                left: 2rem;
+                            }
+
+                            color: $posco-navy-900;
+                            background-color: $navbar-dark-active-color;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar-toggler-icon {
+            .navbar-toggler-icon-bar {
+                background-color: $navbar-dark-hover-color;
+
+                &::before,
+                &::after {
+                    background-color: $navbar-dark-hover-color;
+                }
+            }
+        }
+    }
+
+    #mainContent {
+        min-height: 100%;
+        overflow-x: auto;
+
+        background: {
+            image: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                url('http://poscotower-yeoksam.co.kr/img/gallery_img15.jpg');
+            position: center 30%;
+            size: 200rem 200rem;
+            attachment: fixed;
+        }
+
+        transition: background-position 2.5s ease-out;
+
+        &:not(.index) #contentContainer {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        &::before {
+            position: fixed;
+            top: 0;
+            right: 0;
+            filter: blur(2px);
+            content: '';
+        }
+
+        #contentContainer {
+            .float-box {
+                border: 0px solid rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+                box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+
+                .float-box-title {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    padding: 10px;
+                    color: $light;
+                    background-color: rgba($color: $posco-navy-300, $alpha: 0.5);
+
+                    #pageName {
+                        font-family: $font-family-logo;
+                    }
+                }
+
+                .float-box-content {
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+            }
+
+            form {
+                .input-group {
+                    margin-top: 0.2em;
+                    margin-bottom: 0.2em;
+                }
+            }
+        }
+    }
+
+    footer {
+        font-size: 0.8rem;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    .top-shadow {
+        box-shadow: 0 1px 5px 1px rgba(70, 70, 70, 0.8),
+            inset 0 0 3px -1px rgba(70, 70, 70, 0.5);
+    }
+}
+
+.backdrop {
+    -webkit-backdrop-filter: blur(10px) opacity(1);
+    backdrop-filter: blur(10px) opacity(1);
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @media (min-width: map-get($map: $grid-breakpoints, $key: $breakpoint)) {
+        .navbar {
+            &.sidebar {
+
+                // breakpoint 마다 사이드바 width 재정의 시작
+                @if ($breakpoint==lg or $breakpoint==xl or $breakpoint==xxl) {
+                    $just-width: 13em;
+
+                    @if ($breakpoint==lg) {
+                        $just-width: 15em;
+                    }
+
+                    @else if ($breakpoint==xl) {
+                        $just-width: 17em;
+                    }
+
+                    @else if ($breakpoint==xxl) {
+                        $just-width: 19em;
+                    }
+
+                    width: $just-width;
+                }
+
+                // 사이드바 width 재정의 종료
             }
         }
     }

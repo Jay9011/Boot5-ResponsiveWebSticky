@@ -8,3 +8,24 @@ $yellow:#ffc107;
 $green:#198754;
 $teal:#20c997;
 $cyan:#0dcaf0;
+$none-white: rgba(255, 255, 255, 0);
+$none-black: rgba(0, 0, 0, 0);
+
+$posco-black-900: #021541;
+$posco-navy-900: #021b57;
+$posco-navy-500: #004770;
+$posco-navy-300: #11537a;
+$posco-blue-900: #00578a;
+$posco-green-500: #25c38d;
+$posco-green-300: #24db9c;
+
+// scss-docs-start theme-color-variables
+$primary: $posco-navy-500 !default;
+// $secondary: $gray-600 !default;
+// $success: $green !default;
+// $info: $cyan !default;
+// $warning: $yellow !default;
+// $danger: $red !default;
+// $light: $gray-100 !default;
+// $dark: $gray-900 !default;
+// scss-docs-end theme-color-variables
