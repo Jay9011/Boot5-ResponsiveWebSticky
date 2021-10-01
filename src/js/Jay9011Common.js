@@ -342,3 +342,9 @@ const Jay9011Spinner = (() => {
         }
     }
 })();
+let $showSpinner = () => {
+    Jay9011Spinner.showSpinner();
+}
+let $removeSpinner = () => {
+    Jay9011Spinner.removeSpinner();
+}

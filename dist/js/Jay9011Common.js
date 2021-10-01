@@ -396,3 +396,11 @@ var Jay9011Spinner = function () {
     }
   };
 }();
+
+var $showSpinner = function $showSpinner() {
+  Jay9011Spinner.showSpinner();
+};
+
+var $removeSpinner = function $removeSpinner() {
+  Jay9011Spinner.removeSpinner();
+};
