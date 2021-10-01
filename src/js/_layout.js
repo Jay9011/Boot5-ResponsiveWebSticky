@@ -21,7 +21,7 @@ const customLayout = (() => {
             return activeNowPage(page, dataPage, className);
         }
     }
-});
+})();
 window.onload = () => {
     document.querySelector('#mainContent').style.backgroundPosition = 'center';
 }

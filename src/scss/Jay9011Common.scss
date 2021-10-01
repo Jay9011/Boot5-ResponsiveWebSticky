@@ -1,0 +1,38 @@
+#front_spinner {
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 16777271;
+
+    .spinner_back {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 16777271;
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        .spinner-grow {
+            margin: 10px;
+        }
+
+        .animation_delay_100 {
+            animation-delay: 100ms;
+        }
+
+        .animation_delay_200 {
+            animation-delay: 200ms;
+        }
+
+        .animation_delay_300 {
+            animation-delay: 300ms;
+        }
+    }
+}
