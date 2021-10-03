@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/css/font.css">
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/common.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/Jay9011Common.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+    <script src="./dist/js/BS5Base.js"></script>
+    <script src="./dist/js/_layout.js"></script>
+    <script src="./dist/js/Jay9011Common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            customLayout.activeNowPage('/home/menu1', '/home/menu1', 'active');
+        });
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <!-- 네비게이션 -->
+        <nav class="navbar navbar-light navbar-expand-lg sticky-top relative-lg top-shadow" data-nav-scroll="scroll">
+            <section class="container-fluid px-3 px-sm-4 px-md-5 ">
+                <!-- 메인 링크 -->
+                <a class="navbar-brand" href="#">
+                    <span class="fw-bolder" style="font-size: 1.2em;">포스코타워 역삼</span>
+                    <span class="d-none d-sm-inline">방문자 예약 시스템</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="background: none;">
+                        <span class="navbar-toggler-icon-bar"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse border-top border-lg-0 mt-3 mt-lg-0 text-center"
+                    id="navbarContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 pt-2 pt-lg-0 d-lg-none">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-page="/home/menu1">Menu1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-page="/home/menu2">Menu1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-page="/home/menu3">Menu1</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-nav ms-lg-3 ms-lg-auto">
+                        <a href="#"
+                            class="btn btn-outline-primary d-flex justify-content-center align-items-center order-1 order-lg-0 col-12 col-lg-auto">
+                            <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" width="1em" height="1em"
+                                viewBox="0 0 515.556 515.556" xmlns="http://www.w3.org/2000/svg"
+                                style="margin-right: 0.3em;">
+                                <path
+                                    d="m96.667 32.222v96.667h64.444v-32.222h290v322.222h-290v-32.222h-64.444v96.667h418.889v-451.112z" />
+                                <path
+                                    d="m157.209 331.663 45.564 45.564 119.449-119.449-119.448-119.449-45.564 45.564 41.662 41.662h-198.872v64.445h198.872z" />
+                            </svg>
+                            <span>
+                                로그인
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </nav>
+        <section class="d-flex min-vh-100">
+            <!-- 사이드바 -->
+            <nav class="sidebar navbar navbar-dark d-none d-lg-flex flex-column px-0 bg-primary">
+                <section class="sticky-top col-12">
+                    <ul class="navbar-nav d-flex col-12">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-page="/home/menu1">Menu1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-page="/home/menu2">Menu1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                data-page="/home/menu3">Menu1Menu1Menu1Menu1Menu1Menu1Menu1Menu1Menu1Menu1</a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+            <!-- 본문 시작 -->
+            <!-- index 페이지가 아니면 index와 ms-0 제거 -->
+            <div id="mainContent" class="container-fluid flex-shrink-1 p-0">
+                <div id="contentContainer" class="container-lg ms-0 h-100">
+                    <!-- page start -->
+                    <div class="row justify-content-center align-items-center h-100">
+                        <div class="col-12 col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column justify-content-center my-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h1>방문 신청</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row mb-sm-2">
+                                    <div class="col-12">
+                                        <h5>직원 조회</h5>
+                                    </div>
+                                </div>
+                                <div class="row mb-sm-2">
+                                    <label for="welcomerCompany" class="col-sm-3 col-form-label">방문 회사</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="welcomerCompany"
+                                            id="welcomerCompany" placeholder="방문 회사">
+                                    </div>
+                                </div>
+                                <div class="row mb-sm-2">
+                                    <label for="welcomerName" class="col-sm-3 col-form-label">직원 이름</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="welcomerName" id="welcomerName"
+                                            placeholder="직원 이름">
+                                        <div class="invalid-feedback text-end" data-target="welcomerName">
+                                            직원 이름을 입력해 주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-sm-2">
+                                    <label for="welcomerNumber" class="col-sm-3 col-form-label">직원 연락처</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="welcomerNumber"
+                                            id="welcomerNumber" placeholder="직원 연락처"
+                                            onkeyup="Jay9011Common.deleteRegexOnkeyUp('num', this)">
+                                        <div class="valid-feedback text-end" data-target="welcomerNumber">
+                                            확인되었습니다.
+                                        </div>
+                                        <div class="invalid-feedback text-end" data-target="welcomerNumber">
+                                            직원 연락처를 입력해 주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mt-sm-0">
+                                    <div class="col-12 text-center">
+                                        <button type="button" class="btn btn-primary">
+                                            <span id="checkWelcomer" class="spinner-border spinner-border-sm d-none"
+                                                role="status" aria-hidden="true"></span>
+                                            <span>직원 확인</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="mt-4">
+                                <div class="row mb-sm-2">
+                                    <div class="col-12">
+                                        <h5>방문자 정보 입력</h5>
+                                    </div>
+                                </div>
+                                <div class="row mb-sm-2">
+                                    <label for="welcomerCompany" class="col-sm-3 col-form-label">방문 회사</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control is-invalid" name="welcomerCompany"
+                                            id="welcomerCompany" placeholder="방문 회사">
+                                        <div class="invalid-feedback text-end" data-target="welcomerCompany">
+                                            다시 확인해 주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-sm-2">
+                                    <label for="welcomerName" class="col-sm-3 col-form-label">직원 이름</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="welcomerName" id="welcomerName"
+                                            placeholder="직원 이름">
+                                        <div class="invalid-feedback text-end" data-target="welcomerName">
+                                            다시 확인해 주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-sm-2">
+                                    <label for="welcomerNumber" class="col-sm-3 col-form-label">직원 연락처</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="welcomerNumber"
+                                            id="welcomerNumber" placeholder="직원 연락처"
+                                            onkeyup="Jay9011Common.deleteRegexOnkeyUp('num', this)">
+                                        <div class="invalid-feedback text-end" data-target="welcomerNumber">
+                                            다시 확인해 주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion mt-3 accordionExample" id="">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="false" aria-controls="collapseOne">
+                                                Accordion Item #1
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne" data-bs-parent=".accordionExample">
+                                            <div class="accordion-body">
+                                                <strong>This is the first item's accordion body.</strong> It is
+                                                shown by
+                                                default, until the collapse
+                                                plugin adds the appropriate classes that we use to style each
+                                                element.
+                                                These classes control the overall
+                                                appearance, as well as the showing and hiding via CSS transitions.
+                                                You
+                                                can modify any of this with
+                                                custom CSS or overriding our default variables. It's also worth
+                                                noting
+                                                that just about any HTML can go
+                                                within the <code>.accordion-body</code>, though the transition does
+                                                limit overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label order-0" for="">동의합니다 (필수)</label>
+                                    <input type="checkbox" class="form-check-input" name="" id="">
+                                </div>
+                                <div class="accordion mt-3 accordionExample" id="accordionExample2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                Accordion Item #1
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent=".accordionExample">
+                                            <div class="accordion-body">
+                                                <strong>This is the first item's accordion body.</strong> It is
+                                                shown by
+                                                default, until the collapse
+                                                plugin adds the appropriate classes that we use to style each
+                                                element.
+                                                These classes control the overall
+                                                appearance, as well as the showing and hiding via CSS transitions.
+                                                You
+                                                can modify any of this with
+                                                custom CSS or overriding our default variables. It's also worth
+                                                noting
+                                                that just about any HTML can go
+                                                within the <code>.accordion-body</code>, though the transition does
+                                                limit overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label order-0" for="">동의합니다 (필수)</label>
+                                    <input type="checkbox" class="form-check-input" name="" id="">
+                                </div>
+                                <div class="row mt-2 mt-sm-0">
+                                    <div class="col-12 text-center">
+                                        <button type="button" class="btn btn-primary">
+                                            <span id="checkWelcomer" class="spinner-border spinner-border-sm d-none"
+                                                role="status" aria-hidden="true"></span>
+                                            <span>직원 확인</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- page end -->
+                </div>
+            </div>
+            <!-- 본문 종료 -->
+        </section>
+        <!-- 푸터 -->
+        <footer class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect"
+                            title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"
+                            title="Flaticon">www.flaticon.com</a></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

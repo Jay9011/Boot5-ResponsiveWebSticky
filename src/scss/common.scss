@@ -380,6 +380,11 @@ body {
     -webkit-backdrop-filter: blur(10px) opacity(1);
     backdrop-filter: blur(10px) opacity(1);
 }
+.accordion-body {
+    height: 10em;
+    overflow-y: auto;
+    margin: 0.5em 0;
+}
 
 @each $breakpoint in map-keys($grid-breakpoints) {
     @media (min-width: map-get($map: $grid-breakpoints, $key: $breakpoint)) {
