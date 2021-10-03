@@ -115,40 +115,22 @@
                                     <label for="welcomerCompany" class="col-sm-3 col-form-label">방문 회사</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="welcomerCompany"
-                                            id="welcomerCompany" placeholder="방문 회사">
+                                            id="welcomerCompany" placeholder="방문 회사" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-sm-2">
                                     <label for="welcomerName" class="col-sm-3 col-form-label">직원 이름</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="welcomerName" id="welcomerName"
-                                            placeholder="직원 이름">
-                                        <div class="invalid-feedback text-end" data-target="welcomerName">
-                                            직원 이름을 입력해 주세요.
-                                        </div>
+                                            placeholder="직원 이름" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-sm-2">
                                     <label for="welcomerNumber" class="col-sm-3 col-form-label">직원 연락처</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="welcomerNumber"
-                                            id="welcomerNumber" placeholder="직원 연락처"
+                                            id="welcomerNumber" placeholder="직원 연락처" readonly
                                             onkeyup="Jay9011Common.deleteRegexOnkeyUp('num', this)">
-                                        <div class="valid-feedback text-end" data-target="welcomerNumber">
-                                            확인되었습니다.
-                                        </div>
-                                        <div class="invalid-feedback text-end" data-target="welcomerNumber">
-                                            직원 연락처를 입력해 주세요.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-2 mt-sm-0">
-                                    <div class="col-12 text-center">
-                                        <button type="button" class="btn btn-primary">
-                                            <span id="checkWelcomer" class="spinner-border spinner-border-sm d-none"
-                                                role="status" aria-hidden="true"></span>
-                                            <span>직원 확인</span>
-                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -161,18 +143,15 @@
                                 <div class="row mb-sm-2">
                                     <label for="welcomerCompany" class="col-sm-3 col-form-label">방문 회사</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control is-invalid" name="welcomerCompany"
-                                            id="welcomerCompany" placeholder="방문 회사">
-                                        <div class="invalid-feedback text-end" data-target="welcomerCompany">
-                                            다시 확인해 주세요.
-                                        </div>
+                                        <input type="text" class="form-control" name="welcomerCompany"
+                                            id="welcomerCompany" placeholder="방문 회사" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-sm-2">
                                     <label for="welcomerName" class="col-sm-3 col-form-label">직원 이름</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="welcomerName" id="welcomerName"
-                                            placeholder="직원 이름">
+                                            placeholder="직원 이름" readonly>
                                         <div class="invalid-feedback text-end" data-target="welcomerName">
                                             다시 확인해 주세요.
                                         </div>
@@ -182,86 +161,8 @@
                                     <label for="welcomerNumber" class="col-sm-3 col-form-label">직원 연락처</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="welcomerNumber"
-                                            id="welcomerNumber" placeholder="직원 연락처"
+                                            id="welcomerNumber" placeholder="직원 연락처" readonly
                                             onkeyup="Jay9011Common.deleteRegexOnkeyUp('num', this)">
-                                        <div class="invalid-feedback text-end" data-target="welcomerNumber">
-                                            다시 확인해 주세요.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion mt-3 accordionExample" id="">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingOne">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                aria-expanded="false" aria-controls="collapseOne">
-                                                Accordion Item #1
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse"
-                                            aria-labelledby="headingOne" data-bs-parent=".accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>This is the first item's accordion body.</strong> It is
-                                                shown by
-                                                default, until the collapse
-                                                plugin adds the appropriate classes that we use to style each
-                                                element.
-                                                These classes control the overall
-                                                appearance, as well as the showing and hiding via CSS transitions.
-                                                You
-                                                can modify any of this with
-                                                custom CSS or overriding our default variables. It's also worth
-                                                noting
-                                                that just about any HTML can go
-                                                within the <code>.accordion-body</code>, though the transition does
-                                                limit overflow.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label order-0" for="agree1">동의합니다 (필수)</label>
-                                    <input type="checkbox" class="form-check-input is-invalid" name="agree1"
-                                        id="agree1">
-                                    <div class="invalid-feedback" data-target="welcomerNumber">
-                                        필수 항목에 동의하셔야 진행이 가능합니다.
-                                    </div>
-                                </div>
-                                <div class="accordion mt-3 accordionExample" id="accordionExample2">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
-                                                Accordion Item #1
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" class="accordion-collapse collapse"
-                                            aria-labelledby="headingTwo" data-bs-parent=".accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>This is the first item's accordion body.</strong> It is
-                                                shown by
-                                                default, until the collapse
-                                                plugin adds the appropriate classes that we use to style each
-                                                element.
-                                                These classes control the overall
-                                                appearance, as well as the showing and hiding via CSS transitions.
-                                                You
-                                                can modify any of this with
-                                                custom CSS or overriding our default variables. It's also worth
-                                                noting
-                                                that just about any HTML can go
-                                                within the <code>.accordion-body</code>, though the transition does
-                                                limit overflow.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label order-0" for="agree2">동의합니다 (필수)</label>
-                                    <input type="checkbox" class="form-check-input" name="agree2" id="agree2">
-                                    <div class="invalid-feedback" data-target="welcomerNumber">
-                                        필수 항목에 동의하셔야 진행이 가능합니다.
                                     </div>
                                 </div>
                                 <div class="row mt-2 mt-sm-0">
