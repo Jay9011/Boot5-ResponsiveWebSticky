@@ -1,5 +1,31 @@
 // 폰트 정의
 $font-family-sans-serif: // font - serif
+"Noto Sans KR",
+"Noto Sans",
+나눔고딕,
+NanumGothic,
+// Cross-platform generic font family (default user interface font)
+system-ui,
+// Safari for macOS and iOS (San Francisco)
+-apple-system,
+// Chrome < 56 for macOS (San Francisco)
+BlinkMacSystemFont,
+// Windows
+"Segoe UI",
+// Android
+Roboto,
+// Basic web fallback
+Arial,
+// Sans serif fallback
+sans-serif,
+// Emoji fonts
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji" !default;
+
+$font-family-base: // font - base
+"Noto Sans KR",
 "Noto Sans",
 나눔고딕,
 NanumGothic,
@@ -103,6 +129,12 @@ footer {
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.input-group-sm {
+    .input-group-fs {
+        font-size: .875rem;
+    }
 }
 
 // custom using bootstrap

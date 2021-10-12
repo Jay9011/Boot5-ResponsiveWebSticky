@@ -13,6 +13,22 @@ const BS5Base = (() => {
             navBarEl.classList.add('backdrop');
         }
     };
+
+    function isInvalidOff(el) {
+        el.classList.remove('is-invalid');
+    }
+
+    function isValidOff(el) {
+        el.classList.remove('is-valid');
+    }
+
+    function invalidTooltipText(target, text) {
+        document.querySelector(`.invalid-tooltip[data-target=${target}]`).innerText = text;
+    }
+
+    function validTooltipText(target, text) {
+        document.querySelector(`.valid-tooltip[data-target=${target}]`).innerText = text;
+    }
     return {
         setNavBarScroll: () => {
             if (!_navThrottle) {
@@ -21,6 +37,18 @@ const BS5Base = (() => {
                     return navBarBackdrop();
                 }, 100);
             }
+        },
+        isInvalidOff: (el) => {
+            isInvalidOff(el);
+        },
+        isValidOff: (el) => {
+            isValidOff(el);
+        },
+        invalidTooltipText: (target, text) => {
+            invalidTooltipText(target, text);
+        },
+        validTooltipText: (target, text) => {
+            validTooltipText(target, text);
         }
     };
 })();

@@ -348,3 +348,35 @@ let $showSpinner = () => {
 let $removeSpinner = () => {
     Jay9011Spinner.removeSpinner();
 }
+
+document.addEventListener('click', (event) => {
+    let type = event.target.dataset['type'];
+
+    if (!type) {
+        return false;
+    } else {
+        switch (type) {
+            // 체크박스 그룹 클릭 이벤트
+            case 'checkGroup':
+                let target = event.target;
+                if (target.dataset['isparent'] === 'true') {
+                    // 부모 요소라면
+                    document.querySelectorAll(`[data-group=${target.dataset['group']}]`).forEach((el) => {
+                        el.checked = target.checked;
+                    });
+                } else {
+                    // 부모 요소가 아니라면 (개인)
+                    let isChecked = true;
+                    let parentEl = document.querySelector(`[data-group=${target.dataset['group']}][data-isparent=true]`);
+                    document.querySelectorAll(`[data-group=${target.dataset['group']}][data-isparent=false]`).forEach((el) => {
+                        isChecked = isChecked && el.checked;
+                    });
+                    parentEl.checked = isChecked;
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+});

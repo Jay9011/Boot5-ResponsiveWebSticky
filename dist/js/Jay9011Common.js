@@ -404,3 +404,37 @@ var $showSpinner = function $showSpinner() {
 var $removeSpinner = function $removeSpinner() {
   Jay9011Spinner.removeSpinner();
 };
+
+document.addEventListener('click', function (event) {
+  var type = event.target.dataset['type'];
+
+  if (!type) {
+    return false;
+  } else {
+    switch (type) {
+      // 체크박스 그룹 클릭 이벤트
+      case 'checkGroup':
+        var target = event.target;
+
+        if (target.dataset['isparent'] === 'true') {
+          // 부모 요소라면
+          document.querySelectorAll("[data-group=".concat(target.dataset['group'], "]")).forEach(function (el) {
+            el.checked = target.checked;
+          });
+        } else {
+          // 부모 요소가 아니라면 (개인)
+          var isChecked = true;
+          var parentEl = document.querySelector("[data-group=".concat(target.dataset['group'], "][data-isparent=true]"));
+          document.querySelectorAll("[data-group=".concat(target.dataset['group'], "][data-isparent=false]")).forEach(function (el) {
+            isChecked = isChecked && el.checked;
+          });
+          parentEl.checked = isChecked;
+        }
+
+        break;
+
+      default:
+        break;
+    }
+  }
+});

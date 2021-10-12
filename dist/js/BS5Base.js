@@ -17,6 +17,23 @@ var BS5Base = function () {
   }
 
   ;
+
+  function _isInvalidOff(el) {
+    el.classList.remove('is-invalid');
+  }
+
+  function _isValidOff(el) {
+    el.classList.remove('is-valid');
+  }
+
+  function _invalidTooltipText(target, text) {
+    document.querySelector(".invalid-tooltip[data-target=".concat(target, "]")).innerText = text;
+  }
+
+  function _validTooltipText(target, text) {
+    document.querySelector(".valid-tooltip[data-target=".concat(target, "]")).innerText = text;
+  }
+
   return {
     setNavBarScroll: function setNavBarScroll() {
       if (!_navThrottle) {
@@ -25,6 +42,18 @@ var BS5Base = function () {
           return navBarBackdrop();
         }, 100);
       }
+    },
+    isInvalidOff: function isInvalidOff(el) {
+      _isInvalidOff(el);
+    },
+    isValidOff: function isValidOff(el) {
+      _isValidOff(el);
+    },
+    invalidTooltipText: function invalidTooltipText(target, text) {
+      _invalidTooltipText(target, text);
+    },
+    validTooltipText: function validTooltipText(target, text) {
+      _validTooltipText(target, text);
     }
   };
 }();

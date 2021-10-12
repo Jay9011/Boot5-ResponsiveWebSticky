@@ -318,9 +318,9 @@ body {
 
         transition: background-position 2.5s ease-out;
 
-        &:not(.index) #contentContainer {
-            background-color: rgba(255, 255, 255, 1);
-        }
+        // &:not(.index) #contentContainer {
+        //     background-color: rgba(255, 255, 255, 1);
+        // }
 
         &::before {
             position: fixed;
@@ -342,10 +342,6 @@ body {
                     padding: 10px;
                     color: $light;
                     background-color: rgba($color: $posco-navy-300, $alpha: 0.5);
-
-                    #pageName {
-                        font-family: $font-family-logo;
-                    }
                 }
 
                 .float-box-content {
@@ -376,10 +372,15 @@ body {
     }
 }
 
+.titleFont {
+    font-family: $font-family-logo;
+}
+
 .backdrop {
     -webkit-backdrop-filter: blur(10px) opacity(1);
     backdrop-filter: blur(10px) opacity(1);
 }
+
 .accordion-body {
     height: 10em;
     overflow-y: auto;
