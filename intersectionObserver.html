@@ -22,6 +22,15 @@
     <script src="./dist/js/intersection-observer.js"></script>
     <script src="./dist/js/Jay9011observer.js"></script>
     <link rel="stylesheet" href="./dist/css/cardDisplay.min.css">
+    <script>
+        function openSearchForm() {
+            document.querySelector('#searchBox').classList.remove('d-none');
+        }
+
+        function closeSearchForm() {
+            document.querySelector('#searchBox').classList.add('d-none');
+        }
+    </script>
 </head>
 
 <body>
@@ -100,9 +109,11 @@
                             <div class="row m-0 m-lg-2">
                             </div>
                             <!-- 검색란 시작 -->
-                            <div id="searchBox" class="row justify-content-center align-items-center">
-                                <div class="col-12 d-flex flex-column">
-                                    <button type="button" class="btn btn-close align-self-end d-lg-none"></button>
+                            <div id="searchBox"
+                                class="row justify-content-center align-items-center d-none d-lg-flex mx-lg-0 mx-xl-2 mx-xxl-3">
+                                <div class="col d-flex flex-column p-2 mx-sm-2 mx-lg-0">
+                                    <button type="button" class="btn btn-close align-self-end d-lg-none"
+                                        onclick="closeSearchForm()"></button>
                                     <form action="" class="row">
                                         <div class="col-12 col-lg">
                                             <div class="input-group">
@@ -126,13 +137,14 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-lg-auto text-end">
+                                            <button class="btn btn-outline-info float-lg-end ms-2">초기화</button>
                                             <button class="btn btn-primary">검색</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div id="fixedSearchBtn" class="">
-                                <button class="btn btn-light">
+                            <div id="fixedSearchBtn" class="" onclick="openSearchForm()">
+                                <button class="btn btn-light btn-outline-dark">
                                     <?xml version="1.0" ?>
                                     <svg viewBox="0 0 24 24" width="1.5em" height="1.5em"
                                         xmlns="http://www.w3.org/2000/svg">
