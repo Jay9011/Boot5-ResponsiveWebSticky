@@ -1,0 +1,126 @@
+#searchBox {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    z-index: 1021;
+}
+
+#card-box {
+    .cardDisplay {
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) opacity(1);
+
+        .cardLine {
+            width: 0.3em;
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+        }
+
+        .cardDisplayBtnBox {
+            border-top-right-radius: inherit;
+            border-bottom-right-radius: inherit;
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+        }
+
+        .cardAgreeBtn {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+
+            >div {
+                max-width: 0px;
+                opacity: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                transition: all 0.5s;
+            }
+
+            &.is-invalid {
+                box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.7);
+
+                >div.is-invalid {
+                    max-width: 6em;
+                    opacity: 1;
+                }
+            }
+
+            &.is-request {
+                >div.is-request {
+                    max-width: 6em;
+                    opacity: 1;
+                }
+            }
+
+            &.is-valid {
+                font-weight: bold;
+
+                >div.is-valid {
+                    max-width: 6em;
+                    opacity: 1;
+                }
+            }
+
+
+        }
+
+        .cardContent {
+
+            .cardViName {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            .cardViPhone {
+                color: #555;
+                font-size: 1em;
+            }
+
+            .cardViDate {
+                font-size: 0.9em;
+            }
+
+            .cardIVName {
+                font-size: 0.8em;
+            }
+
+            .cardIVCompany {
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+#fixedSearchBtn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #searchBox {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: none;
+        z-index: 1;
+    }
+
+    #card-box {
+        .cardDisplay {
+            border-radius: 0;
+        }
+    }
+
+    #fixedSearchBtn {
+        display: none;
+    }
+}

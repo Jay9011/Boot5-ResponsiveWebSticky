@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/css/font.css">
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/common.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="./dist/js/qrcode.min.js"></script>
+    <script type="text/javascript">
+        let qrcode;
+        document.addEventListener('DOMContentLoaded', function () {
+            qrcode = new QRCode(document.querySelector('#qrcode'), {
+                text: '01012345678',
+                width: document.querySelector('#qrcode').offsetWidth,
+                height: document.querySelector('#qrcode').offsetHeight,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            qrcode.makeCode('01000000000');
+        });
+    </script>
+    <style>
+        @media (max-width: 374.98px) {
+            table {
+                font-size: 4.5vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12 text-center titleFont pt-2 text-primary">
+                <h5>포스코타워</h5>
+            </div>
+            <div class="col-12 text-center">
+                <h1>방문객 출입증</h1>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="ratio ratio-1x1">
+                    <div class="img-thumbnail p-2">
+                        <div id="qrcode" class="h-100">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 table-responsive">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th scope="row">방문일자</th>
+                            <td>1990-01-01 ~ 1990-01-01</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">방문위치</th>
+                            <td>불러오는중...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이름</th>
+                            <td>불러오는중...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

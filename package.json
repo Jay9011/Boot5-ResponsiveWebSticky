@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.15.6"
   },
   "dependencies": {
-    "bootstrap": "^5.1.1"
+    "bootstrap": "^5.1.1",
+    "intersection-observer": "^0.12.0"
   }
 }

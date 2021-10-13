@@ -1,0 +1,118 @@
+#searchBox {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  z-index: 1021;
+}
+
+#card-box .cardDisplay {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px) opacity(1);
+          backdrop-filter: blur(10px) opacity(1);
+}
+
+#card-box .cardDisplay .cardLine {
+  width: 0.3em;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+#card-box .cardDisplay .cardDisplayBtnBox {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+#card-box .cardDisplay .cardAgreeBtn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+#card-box .cardDisplay .cardAgreeBtn > div {
+  max-width: 0px;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#card-box .cardDisplay .cardAgreeBtn.is-invalid {
+  -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.7);
+          box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.7);
+}
+
+#card-box .cardDisplay .cardAgreeBtn.is-invalid > div.is-invalid {
+  max-width: 6em;
+  opacity: 1;
+}
+
+#card-box .cardDisplay .cardAgreeBtn.is-request > div.is-request {
+  max-width: 6em;
+  opacity: 1;
+}
+
+#card-box .cardDisplay .cardAgreeBtn.is-valid {
+  font-weight: bold;
+}
+
+#card-box .cardDisplay .cardAgreeBtn.is-valid > div.is-valid {
+  max-width: 6em;
+  opacity: 1;
+}
+
+#card-box .cardDisplay .cardContent .cardViName {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#card-box .cardDisplay .cardContent .cardViPhone {
+  color: #555;
+  font-size: 1em;
+}
+
+#card-box .cardDisplay .cardContent .cardViDate {
+  font-size: 0.9em;
+}
+
+#card-box .cardDisplay .cardContent .cardIVName {
+  font-size: 0.8em;
+}
+
+#card-box .cardDisplay .cardContent .cardIVCompany {
+  font-size: 0.8em;
+}
+
+#fixedSearchBtn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+@media (min-width: 992px) {
+  #searchBox {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    z-index: 1;
+  }
+  #card-box .cardDisplay {
+    border-radius: 0;
+  }
+  #fixedSearchBtn {
+    display: none;
+  }
+}
+/*# sourceMappingURL=cardDisplay.css.map */
