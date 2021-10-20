@@ -223,6 +223,45 @@ var Jay9011Common = function () {
   }; // end fileSizeToString(beforeSize)
 
 
+  var _appendChildEL = function appendChildEL(el, name, value) {
+    var inputEl = document.createElement('input');
+    inputEl.type = 'hidden';
+    inputEl.name = name;
+    inputEl.value = value;
+    el.appendChild(inputEl);
+  }; // start touchAndClickEvent
+
+
+  var _touchAndClickEvent = function touchAndClickEvent(tempVar, clickFn) {
+    // 클릭 이벤트 발생 감지
+    if ('ontouchstart' in document.documentElement) {
+      // 터치 가능 디바이스에서
+      document.addEventListener('touchstart', function (e) {
+        if (tempVar) {
+          tempVar = null;
+        } else {
+          tempVar = clickFn;
+        }
+      });
+      document.addEventListener('touchmove', function (e) {
+        if (tempVar) {
+          tempVar = null;
+        }
+      });
+      document.addEventListener('touchend', function (e) {
+        if (tempVar) {
+          clickFn(e);
+        }
+      });
+    } else {
+      // 클릭 이벤트로만 등록
+      document.addEventListener('click', function (e) {
+        clickFn(e);
+      });
+    }
+  }; // end touchAndClickEvent
+
+
   return {
     /**
      * (Function) keyup시 유효성 검사를 하고 유효성검사에 맞지 않는 텍스트는 제거한다. (num, en, num+en, hour, minute, custom)
@@ -285,6 +324,20 @@ var Jay9011Common = function () {
      */
     fileSizeToString: function fileSizeToString(beforeSize) {
       return _fileSizeToString(beforeSize);
+    },
+
+    /**
+     * 특정 엘리먼트의 마지막 위치에 hidden 타입의 input을 추가한다.
+     * @param {Element} el 삽입할 요소
+     * @param {string} name input의 이름
+     * @param {string} value input의 값
+     * @returns 
+     */
+    appendChildEL: function appendChildEL(el, name, value) {
+      return _appendChildEL(el, name, value);
+    },
+    touchAndClickEvent: function touchAndClickEvent(tempVar, clickFn) {
+      return _touchAndClickEvent(tempVar, clickFn);
     }
   };
 }();

@@ -183,6 +183,43 @@ const Jay9011Common = (() => {
         return sizeText;
     }
     // end fileSizeToString(beforeSize)
+    const appendChildEL = (el, name, value) => {
+        let inputEl = document.createElement('input');
+        inputEl.type = 'hidden';
+        inputEl.name = name;
+        inputEl.value = value;
+        el.appendChild(inputEl);
+    }
+    // start touchAndClickEvent
+    const touchAndClickEvent = (tempVar, clickFn) => {
+        // 클릭 이벤트 발생 감지
+        if ('ontouchstart' in document.documentElement) {
+            // 터치 가능 디바이스에서
+            document.addEventListener('touchstart', function (e) {
+                if (tempVar) {
+                    tempVar = null;
+                } else {
+                    tempVar = clickFn;
+                }
+            });
+            document.addEventListener('touchmove', function (e) {
+                if (tempVar) {
+                    tempVar = null;
+                }
+            });
+            document.addEventListener('touchend', function (e) {
+                if (tempVar) {
+                    clickFn(e);
+                }
+            });
+        } else {
+            // 클릭 이벤트로만 등록
+            document.addEventListener('click', function (e) {
+                clickFn(e);
+            });
+        }
+    }
+    // end touchAndClickEvent
     return {
         /**
          * (Function) keyup시 유효성 검사를 하고 유효성검사에 맞지 않는 텍스트는 제거한다. (num, en, num+en, hour, minute, custom)
@@ -239,6 +276,19 @@ const Jay9011Common = (() => {
          */
         fileSizeToString: (beforeSize) => {
             return fileSizeToString(beforeSize);
+        },
+        /**
+         * 특정 엘리먼트의 마지막 위치에 hidden 타입의 input을 추가한다.
+         * @param {Element} el 삽입할 요소
+         * @param {string} name input의 이름
+         * @param {string} value input의 값
+         * @returns 
+         */
+        appendChildEL: (el, name, value) => {
+            return appendChildEL(el, name, value);
+        },
+        touchAndClickEvent: (tempVar, clickFn) => {
+            return touchAndClickEvent(tempVar, clickFn);
         }
     }
 })();

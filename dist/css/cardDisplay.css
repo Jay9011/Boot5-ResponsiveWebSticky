@@ -1,6 +1,7 @@
 #searchBox {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.1);
@@ -74,6 +75,11 @@
   opacity: 1;
 }
 
+#card-box .cardDisplay .cardAgreeBtn.is-overed > div.is-overed {
+  max-width: 6em;
+  opacity: 1;
+}
+
 #card-box .cardDisplay .cardContent .cardViName {
   font-size: 1.2em;
   font-weight: bold;
@@ -85,6 +91,10 @@
 }
 
 #card-box .cardDisplay .cardContent .cardViDate {
+  font-size: 0.9em;
+}
+
+#card-box .cardDisplay .cardContent .cardIVDescription {
   font-size: 0.9em;
 }
 
