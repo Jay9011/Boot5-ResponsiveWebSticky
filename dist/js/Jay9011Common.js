@@ -419,7 +419,9 @@ var Jay9011Spinner = function () {
       document.querySelector('body').appendChild(dom);
       scrollDisable();
       setTimeout(function () {
-        document.querySelector('#front_spinner .spinner_back').style.opacity = '1';
+        if (document.querySelector('#front_spinner .spinner_back')) {
+          document.querySelector('#front_spinner .spinner_back').style.opacity = '1';
+        }
       }, 10);
     }
   };

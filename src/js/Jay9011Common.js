@@ -365,7 +365,9 @@ const Jay9011Spinner = (() => {
             document.querySelector('body').appendChild(dom);
             scrollDisable();
             setTimeout(() => {
-                document.querySelector('#front_spinner .spinner_back').style.opacity = '1';
+                if (document.querySelector('#front_spinner .spinner_back')) {
+                    document.querySelector('#front_spinner .spinner_back').style.opacity = '1';
+                }
             }, 10);
         }
     }
