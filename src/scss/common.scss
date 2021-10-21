@@ -381,6 +381,12 @@ body {
     backdrop-filter: blur(10px) opacity(1);
 }
 
+@supports not (backdrop-filter: blur(10px)) {
+    .backdrop {
+        // background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
 .accordion-body {
     height: 10em;
     overflow-y: auto;

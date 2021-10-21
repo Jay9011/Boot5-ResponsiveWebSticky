@@ -111,6 +111,18 @@
     }
 }
 
+@supports not (backdrop-filter: blur(1px)) {
+    #searchBox {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    #card-box {
+        .cardDisplay {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
 #fixedSearchBtn {
     position: fixed;
     bottom: 1rem;
