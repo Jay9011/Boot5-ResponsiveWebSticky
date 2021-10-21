@@ -106,6 +106,15 @@
   font-size: 0.8em;
 }
 
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  #searchBox {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  #card-box .cardDisplay {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
 #fixedSearchBtn {
   position: fixed;
   bottom: 1rem;
