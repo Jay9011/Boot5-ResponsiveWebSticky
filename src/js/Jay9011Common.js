@@ -220,6 +220,22 @@ const Jay9011Common = (() => {
         }
     }
     // end touchAndClickEvent
+    // start checkCapsLockEvent
+    const checkCapsLockEvent = (event, popover, el) => {
+        if (event instanceof KeyboardEvent) {
+            if (event.getModifierState('CapsLock')) {
+                popover.show();
+            } else {
+                popover.hide();
+            }
+        }
+    }
+    // end checkCapsLockEvent
+    // start checkCapsLockHideEvent
+    const checkCapsLockHideEvent = (popover, el) => {
+        popover.hide();
+    }
+    // end checkCapsLockHideEvent
     return {
         /**
          * (Function) keyup시 유효성 검사를 하고 유효성검사에 맞지 않는 텍스트는 제거한다. (num, en, num+en, hour, minute, custom)
@@ -289,6 +305,23 @@ const Jay9011Common = (() => {
         },
         touchAndClickEvent: (tempVar, clickFn) => {
             return touchAndClickEvent(tempVar, clickFn);
+        },
+        /**
+         * CapsLock 이벤트가 필터링되면 해당 popover를 토글한다.
+         * @param {Event} event 이벤트 객체
+         * @param {bootstrap} popover popover 객체
+         * @param {Element}} el popover 요소
+         */
+        checkCapsLockEvent: (event, popover, el) => {
+            return checkCapsLockEvent(event, popover, el);
+        },
+        /**
+         * 해당 팝오버를 숨김 처리한다.
+         * @param {bootstrap} popover popover 객체
+         * @param {Element} el popover 요소
+         */
+        checkCapsLockHideEvent: (popover, el) => {
+            return checkCapsLockHideEvent(popover, el);
         }
     }
 })();

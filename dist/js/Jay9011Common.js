@@ -260,6 +260,24 @@ var Jay9011Common = function () {
       });
     }
   }; // end touchAndClickEvent
+  // start checkCapsLockEvent
+
+
+  var _checkCapsLockEvent = function checkCapsLockEvent(event, popover, el) {
+    if (event instanceof KeyboardEvent) {
+      if (event.getModifierState('CapsLock')) {
+        popover.show();
+      } else {
+        popover.hide();
+      }
+    }
+  }; // end checkCapsLockEvent
+  // start checkCapsLockHideEvent
+
+
+  var _checkCapsLockHideEvent = function checkCapsLockHideEvent(popover, el) {
+    popover.hide();
+  }; // end checkCapsLockHideEvent
 
 
   return {
@@ -338,6 +356,25 @@ var Jay9011Common = function () {
     },
     touchAndClickEvent: function touchAndClickEvent(tempVar, clickFn) {
       return _touchAndClickEvent(tempVar, clickFn);
+    },
+
+    /**
+     * CapsLock 이벤트가 필터링되면 해당 popover를 토글한다.
+     * @param {Event} event 이벤트 객체
+     * @param {bootstrap} popover popover 객체
+     * @param {Element}} el popover 요소
+     */
+    checkCapsLockEvent: function checkCapsLockEvent(event, popover, el) {
+      return _checkCapsLockEvent(event, popover, el);
+    },
+
+    /**
+     * 해당 팝오버를 숨김 처리한다.
+     * @param {bootstrap} popover popover 객체
+     * @param {Element} el popover 요소
+     */
+    checkCapsLockHideEvent: function checkCapsLockHideEvent(popover, el) {
+      return _checkCapsLockHideEvent(popover, el);
     }
   };
 }();
